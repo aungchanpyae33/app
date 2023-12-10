@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo list</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar bg-dark navbar-dark">
+        <div class="container" style="max-width:600px;">
+            <a href="#" class="navbar-brand">Todolist
+                <span class="badge bg-danger ms-2">0</span>
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-danger clear">Clear</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+    <div class="container" style="max-width: 600px;">
+        <div class="input-group my-4">
+            <input type="text" class="form-control ">
+            <button class="btn btn-primary px-2">Add</button>
+        </div>
+
+        <ul id="todo" class="list-group"></ul>
+        <ul id="done" class="list-group mt-4 opacity-50"></ul>
+    </div>
+
+
+
+    <script>
+        document.querySelector("button").onclick = todo;
+        function updateCount() {
+            document.querySelector(".badge").textContent =
+                document.querySelectorAll("#todo li").length
+        }
+        document.querySelector("input").onkeydown = (e) => {
+            if (e.key === "Enter") {
+                todo()
+            }
+        }
+        function todo() {
+            const inputElement = document.querySelector("input").value;
+
+            if (inputElement === "") {
+                document.querySelector("input")
+                    .setAttribute("placeHolder", "Please type the list")
+                return;
+            }
+            create();
+            updateCount()
+            document.querySelector("input").value = ""
+            document.querySelector("input").focus();
+
+            function create() {
+                let liElement = document.createElement("li")
+                liElement.classList.add("list-group-item")
+                liElement.textContent = inputElement;
+                const del = document.createElement("a");
+                del.setAttribute("href", "#")
+                del.classList.add("fa-solid", "fa-trash", "text-danger", "float-end")
+
+                del.onclick = () => {
+                    liElement.remove();
+                    updateCount()
+                }
+                let check = document.createElement("a");
+                check.setAttribute("href", "#")
+                check.classList.add("fa-solid", "fa-check", "float-start", "me-2")
+
+                check.onclick = () => {
+                    console.log("hi")
+                    let cc = liElement.textContent;
+                    console.log(cc)
+                    const undo = document.createElement("a");
+                    undo.setAttribute("href", "#");
+                    undo.textContent = "undoButton"
+
+                    liElement.appendChild(undo)
+                    undo.addEventListener("click", e => {
+                        check.hidden = false;
+                        e.target = liElement;
+                        console.log(e.target)
+                        liElement.textContent = cc;
+                        liElement.appendChild(del)
+                        liElement.appendChild(check)
+                        document.querySelector("#todo").appendChild(liElement);
+                        updateCount();
+
+                    });
+                    check.hidden = true;
+                    document.querySelector("#done").appendChild(liElement)
+                    updateCount()
+                }
+                document.querySelector(".clear").onclick = () => {
+                    document.querySelector("#done").textContent = "";
+                }
+                liElement.appendChild(check)
+                liElement.appendChild(del);
+                document.querySelector("#todo").appendChild(liElement);
+            }
+        }
+    </script>
+</body>
+
+</html>

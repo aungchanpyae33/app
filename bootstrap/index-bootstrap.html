@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href='/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="/css/all.min.css">
+  <script src="/js/bootstrap.bundle.min.js" defer></script>
+</head>
+
+<body>
+  <div class="navbar bg-primary navbar-dark navbar-expand">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <i class="fa-solid fa-camera me-2"></i>
+        App</a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="" class="nav-link active">
+            <i class="fa-solid fa-home me-1"></i>
+            Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link">
+            <i class="fa-solid fa-user-circle me-2"></i>
+            About</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-envelope"></i>
+            Contact</a>
+          <div class="dropdown-menu">
+            <a href="" class="dropdown-item">one</a>
+            <a href="" class="dropdown-item">two</a>
+            <a href="" class="dropdown-item">three</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <ul class="nav nav-tabs my-4">
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <!--fa-users nned icon in  website-->
+          <i class="fa-solid fa-users"></i>
+          All user
+
+          <span class="badge bg-danger ms-2">10</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link active">new user</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle='dropdown'>other user </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item">item one</a>
+          <a href="#" class="dropdown-item">item two</a>
+          <a href="#" class="dropdown-item">item three</a>
+        </div>
+
+      </li>
+    </ul>
+
+    <div class="alert alert-info">
+      <i class="fa-solid fa-warning"></i>
+      primary,secondary,info,successs,warning,danger,dark
+    </div>
+    <form class="mb-4">
+      <div class="mb-2">
+        <label for="name">Name</label>
+        <input type="text" id='name' class="form-control">
+      </div>
+      <div class="mb-2">
+        <label for="address">Address</label>
+        <textarea id="address" class="form-control"></textarea>
+      </div>
+      <div class="mb-2">
+        <label for="gender">Gender</label>
+        <select class="form-select" id="gender">
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <button class="btn btn-secondary">
+        <i class="fa-solid fa-arrow-left"></i>
+        Go back</button>
+      <button class="btn btn-primary">
+        <i class="fa-solid fa-paper-plane"></i>
+        Send Data</button>
+    </form>
+    <div class="card mb-4 bg-warning text-dark">
+      <div class="card-header">header</div>
+      <div class="card-body">body</div>
+      <div class="card-footer">footer</div>
+    </div>
+
+    <table class="table table-bordered table-striped table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Bob</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Rose</td>
+        <td>21</td>
+      </tr>
+    </table>
+    <ul class="list-group">
+      <li class="list-group-item">item one</li>
+      <li class="list-group-item active">item two</li>
+      <li class="list-group-item">item three</li>
+      <li class="list-group-item">item four</li>
+    </ul>
+  </div>
+
+</body>
+
+</html>

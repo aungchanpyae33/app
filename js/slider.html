@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 650px;
+            position: relative;
+            color: white;
+        }
+
+        .box {
+            height: 180px;
+            line-height: 180px;
+            text-align: center;
+            font-size: 2em;
+        }
+
+        #box1 {
+            background-color: black;
+        }
+
+        #box2 {
+            background-color: blue;
+            display: none;
+        }
+
+        #box3 {
+            background-color: yellow;
+            display: none;
+        }
+
+        button {
+            position: absolute;
+            top: 35%;
+            background: transparent;
+            border: 0 none;
+            color: white;
+            font-size: 3em;
+        }
+
+        #pre {
+            left: 20px;
+        }
+
+        #next {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button id="pre">&lsaquo;</button>
+        <button id="next">&rsaquo;</button>
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" id="box3">3</div>
+    </div>
+    <script>
+        document.querySelector("#next").onclick = next;
+        document.querySelector("#pre").onclick = prev;
+
+        let box = 1;
+
+        setInterval(next, 3000)
+        function next() {
+            document.querySelector("#box" + box).style.display = "none";
+            box++
+            if (box > 3) box = 1
+            document.querySelector("#box" + box).style.display = "block"
+        }
+
+        function prev() {
+            document.querySelector("#box" + box).style.display = "none";
+            box--
+            if (box < 1) box = 3
+            document.querySelector("#box" + box).style.display = "block"
+        }
+        // map filter
+        //         let num = [1,2,3,4,5]
+        // undefined
+        // num.map(n=> n + 1)
+        // Array(5) [ 2, 3, 4, 5, 6 ]
+
+        // num.filter(n => n%2)
+        // Array(3) [ 1, 3, 5 ]
+
+        // object inside array .map .filter
+        // let user = [
+        //     { name: "alice", age: 23 },
+        //     { name: "bob", age: 20 },
+        //     { name: "alex", age: 18 },
+        //     { name: "joe", age: 25 },
+        //     { name: "aung", age: 31 },
+        // ]
+        // console.log(user.map(u => u.name))
+        // console.log(user.filter(u => u.age <= 20))
+
+        // console.log(
+        //     user
+        //         .filter(u => u.age > 20)
+        //         .map(u => u.name)
+        // )
+
+        // normal json
+        // let dog = {
+        //     name: 'aung',
+        //     legs: 2,
+        //     // hello : function
+        //     hello() {
+        //         console.log(`hello ${this.name} `)
+        //     }
+        // }
+        // dog.hello()
+
+        //  OOP
+        // class Animal {
+        //     legs = 4;
+
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+
+        //     hello() {
+        //         console.log(`${this.name} says Hello`)
+        //     }
+        // }
+
+        // class Dog extends Animal {
+        //     run() {
+        //         console.log(`${this.name} is runnig...`)
+        //     }
+        // }
+        // let dog = new Dog("aung")
+        // dog.hello();
+        // dog.run()
+
+
+        // let name = "aung"
+        // let age = 22
+
+        // // property shorthand
+
+        // let user = { name, age }
+
+        // // array destructuring
+
+        // let arr = [1, 2, 3, 4, 5]
+
+        // [num1, num2, num3] = arr
+
+        // // object destrurting
+
+        // let tom = { uname: 'aung', uage: 20 }
+        // let { uname, uage } = tom;
+
+        // // array spreate
+
+        // let arr1 = [1, 2, 3, 4]
+        // let arr2 = [1, 2, 3, 4]
+
+        // let arr3 = [...arr1, ...arr2]
+
+
+        // cjs esm
+    </script>
+</body>
+
+</html>
